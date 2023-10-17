@@ -12,12 +12,27 @@ import S_2 from './screen/s_2';
 
 const Stack = createStackNavigator();
 
+
 const Home = ({navigation, color }) =>{
+  const getProductImage = () => {
+    switch (color) {
+      case "Silver":
+        return require("./img/vs_silver.png");
+      case "Đỏ":
+        return require("./img/vs_red.png");
+      case "Đen":
+        return require("./img/vs_black.png");
+      case "Xanh":
+        return require("./img/vs_blue.png");
+      default:
+        return require("./img/vs_blue.png");
+    }
+  };
   return(
     <View style={styles.container}>
       <View style={styles.mg}>
         <View style={styles.top}>
-          <Image source={color} style={styles.image} />
+          <Image source={getProductImage()} style={styles.image} />
         </View>
         <View>
           <Text style={styles.fs15}>
@@ -124,6 +139,7 @@ const styles = StyleSheet.create({
   image: {
     width: 301,
     height: 361,
+    resizeMode: 'contain'
   },
   container: {
     flex: 1,

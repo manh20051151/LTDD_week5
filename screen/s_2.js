@@ -61,7 +61,7 @@ export default function s_2({ navigation, updateColor }) {
         <View style={[styles.center]}>
           <TouchableOpacity style={[ styles.center,{height:44, width: 326, backgroundColor: '#4d6dc1', borderRadius: 10}]}
                     onPress={() => {
-                      updateColor(image)
+                      updateColor(text)
                       navigation.navigate('Home');
                     }}
           >
